@@ -1,12 +1,4 @@
 {
-  "sticker": {},
-  "database": {},
-  "game": {
-    "math": []
-  },
-  "others": {
-    "vote": []
-  },
   "users": {
     "919366316018@s.whatsapp.net": {
       "serialNumber": "5748ef2731f9b0ab993964d915670166",
@@ -128,8 +120,20 @@
       "premium": "true",
       "limit": 1000,
       "totalLimit": 0
+    },
+    "14437095780@s.whatsapp.net": {
+      "serialNumber": "1d91b09d482e62204f06fc64bb964482",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "|×|DEBASHIS|×| 𒐫 𒐫 𒐫 𒐫 𒐫 𒐫 𒐫 𒐫 𒐫 𒐫 𒐫 𒐫 𒐫",
+      "premium": "false",
+      "limit": 100,
+      "totalLimit": 0
     }
   },
+  "database": {},
   "chats": {
     "120363047626537933@g.us": {
       "badword": false,
@@ -330,7 +334,50 @@
       "antilink": false,
       "antipromotion": false,
       "antilinkgc": false
+    },
+    "14437095780@s.whatsapp.net": {
+      "badword": false,
+      "antiforeignnum": false,
+      "antibot": false,
+      "antiviewonce": true,
+      "antispam": false,
+      "antivirtex": false,
+      "antimedia": false,
+      "antiimage": false,
+      "antivideo": false,
+      "antiaudio": false,
+      "antipoll": false,
+      "antisticker": false,
+      "antilocation": false,
+      "antidocument": false,
+      "anticontact": false,
+      "antilink": false,
+      "antipromotion": false,
+      "antilinkgc": false
+    },
+    "919339619072@s.whatsapp.net": {
+      "badword": false,
+      "antiforeignnum": false,
+      "antibot": false,
+      "antiviewonce": true,
+      "antispam": false,
+      "antivirtex": false,
+      "antimedia": false,
+      "antiimage": false,
+      "antivideo": false,
+      "antiaudio": false,
+      "antipoll": false,
+      "antisticker": false,
+      "antilocation": false,
+      "antidocument": false,
+      "anticontact": false,
+      "antilink": false,
+      "antipromotion": false,
+      "antilinkgc": false
     }
+  },
+  "game": {
+    "math": []
   },
   "settings": {
     "919366316018@s.whatsapp.net": {
@@ -458,7 +505,7 @@
       }
     },
     "15202238877@s.whatsapp.net": {
-      "totalhit": 20,
+      "totalhit": 31,
       "totalError": 0,
       "online": false,
       "autosticker": false,
@@ -489,5 +536,9 @@
       }
     }
   },
-  "message": {}
+  "message": {},
+  "sticker": {},
+  "others": {
+    "vote": []
+  }
 }
