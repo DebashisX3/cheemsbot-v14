@@ -20667,30 +20667,23 @@ else if (typemenu === 'v13')
     let bugmenu1 = `Hi ${bugmenu(prefix, hituet)}`
     let othermenu1 = `Hi ${othermenu(prefix, hituet)}`
     const slides = [
+      
+      [
+        'https://static.vecteezy.com/system/resources/previews/021/705/116/non_2x/logo-for-the-letter-i-and-d-with-a-modern-classic-style-3d-alphabet-on-black-background-photo.JPG', // Image URL
+          'OWNER MENU  👑\n', // Title
+          `These Commands Can Only Be Used By Bot Owner`, // Body message
+          ownermenu1, // Footer message
+          'Visit', // Button display text
+          'https://youtube.com/@dgxeon', // Command (URL in this case)
+          'cta_url', // Button type
+          'https://youtube.com/@dgxeon' // URL (used in image generation)
+          
+
+      ],
     [
-      fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'), // Image URL
-        '', // Title
-        `Created By ${ownername}`, // Body message
-        allmenu1, // Footer message
-        'Visit', // Button display text
-        'https://youtube.com/@dgxeon', // Command (URL in this case)
-        'cta_url', // Button type
-        'https://youtube.com/@dgxeon' // URL (used in image generation)
-    ], 
-    [
-      fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'), // Image URL
-        '', // Title
-        `Created By ${ownername}`, // Body message
-        ownermenu1, // Footer message
-        'Visit', // Button display text
-        'https://youtube.com/@dgxeon', // Command (URL in this case)
-        'cta_url', // Button type
-        'https://youtube.com/@dgxeon' // URL (used in image generation)
-    ], 
-    [
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/1024px-Telegram_2019_Logo.svg.png', // Image URL
-        '', // Title
-        `Created By ${ownername}`, // Body message
+      'https://static.vecteezy.com/system/resources/previews/021/704/868/non_2x/logo-for-the-letter-e-with-a-modern-classic-style-3d-alphabet-on-black-background-photo.JPG', // Image URL
+        'SEARCH MENU  🔍\n', // Title
+        `Use These Commands To Search Contents From Internet`, // Body message
         searchmenu1, // Footer message
         'Visit', // Button display text
         'https://youtube.com/@dgxeon', // Command (URL in this case)
@@ -20698,9 +20691,19 @@ else if (typemenu === 'v13')
         'https://youtube.com/@dgxeon' // URL (used in image generation)
     ], 
     [
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/1024px-Telegram_2019_Logo.svg.png', // Image URL
-        '', // Title
-        `Created By ${ownername}`, // Body message
+      'https://static.vecteezy.com/system/resources/previews/021/705/014/non_2x/logo-for-the-letter-b-with-a-modern-classic-style-3d-alphabet-on-black-background-photo.JPG', // Image URL
+        'OTHER MENU  😪\n', // Title
+        `Some Other Uncategorized Commands`, // Body message
+        othermenu1, // Footer message
+        'Visit', // Button display text
+        'https://youtube.com/@dgxeon', // Command (URL in this case)
+        'cta_url', // Button type
+        'https://youtube.com/@dgxeon' // URL (used in image generation)
+    ], 
+    [
+      'https://static.vecteezy.com/system/resources/previews/021/704/871/non_2x/logo-for-the-letter-a-with-a-modern-classic-style-3d-alphabet-on-black-background-photo.JPG', // Image URL
+        'DOWNLOAD MENU  ⬇️\n', // Title
+        `Use These Commands To Download Contents From Various Social Media Platforms`, // Body message
         downloadmenu1, // Footer message
         'Visit', // Button display text
         'https://youtube.com/@dgxeon', // Command (URL in this case)
@@ -20708,9 +20711,9 @@ else if (typemenu === 'v13')
         'https://youtube.com/@dgxeon' // URL (used in image generation)
     ], 
     [
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/1024px-Telegram_2019_Logo.svg.png', // Image URL
-        '', // Title
-        `Created By ${ownername}`, // Body message
+      'https://static.vecteezy.com/system/resources/previews/021/705/108/non_2x/logo-for-the-letter-s-with-a-modern-classic-style-3d-alphabet-on-black-background-photo.JPG', // Image URL
+        'GAME MENU  🏏\n', // Title
+        ` Play Games Hosted By BOT`, // Body message
         gamemenu1, // Footer message
         'Visit', // Button display text
         'https://youtube.com/@dgxeon', // Command (URL in this case)
@@ -20719,9 +20722,9 @@ else if (typemenu === 'v13')
     ], 
     
     [
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/1024px-Telegram_2019_Logo.svg.png', // Image URL
-        '', // Title
-        `Created By ${ownername}`, // Body message
+      'https://static.vecteezy.com/system/resources/previews/021/704/870/non_2x/logo-for-the-letter-h-and-b-with-a-modern-classic-style-3d-alphabet-on-black-background-photo.JPG', // Image URL
+        'FUN MENU  😜\n', // Title
+        `Some Funny Commands, Enjoy With Group Friends`, // Body message
         funmenu1, // Footer message
         'Visit', // Button display text
         'https://youtube.com/@dgxeon', // Command (URL in this case)
@@ -20729,9 +20732,9 @@ else if (typemenu === 'v13')
         'https://youtube.com/@dgxeon' // URL (used in image generation)
     ], 
     [
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/1024px-Telegram_2019_Logo.svg.png', // Image URL
-        '', // Title
-        `Created By ${ownername}`, // Body message
+      'https://static.vecteezy.com/system/resources/previews/021/704/878/non_2x/logo-for-the-letter-i-with-a-modern-classic-style-3d-alphabet-on-black-background-photo.JPG', // Image URL
+        'AI MENU  🤖\n', // Title
+        `AI Features Associated with BOT`, // Body message
         aimenu1, // Footer message
         'Visit', // Button display text
         'https://youtube.com/@dgxeon', // Command (URL in this case)
@@ -20739,9 +20742,9 @@ else if (typemenu === 'v13')
         'https://youtube.com/@dgxeon' // URL (used in image generation)
     ], 
     [
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/1024px-Telegram_2019_Logo.svg.png', // Image URL
-        '', // Title
-        `Created By ${ownername}`, // Body message
+      'https://static.vecteezy.com/system/resources/previews/021/705/108/non_2x/logo-for-the-letter-s-with-a-modern-classic-style-3d-alphabet-on-black-background-photo.JPG', // Image URL
+        'GROUP MENU  🔒\n', // Title
+        `These Commands Can Only Be Used In Groups To Control/Modify Settings Of Group. Some Commands Can Only Be Used When The BOT Is Admin Of The Group\n\n`, // Body message
         groupmenu1, // Footer message
         'Visit', // Button display text
         'https://youtube.com/@dgxeon', // Command (URL in this case)
@@ -20749,9 +20752,9 @@ else if (typemenu === 'v13')
         'https://youtube.com/@dgxeon' // URL (used in image generation)
     ], 
     [
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/1024px-Telegram_2019_Logo.svg.png', // Image URL
-        '', // Title
-        `Created By ${ownername}`, // Body message
+      'https://static.vecteezy.com/system/resources/previews/021/705/116/non_2x/logo-for-the-letter-i-and-d-with-a-modern-classic-style-3d-alphabet-on-black-background-photo.JPG', // Image URL
+        'CONVERTER MENU  🎶\n', // Title
+        `Modify/Change Tones Of Voice Messages`, // Body message
         convertmenu1, // Footer message
         'Visit', // Button display text
         'https://youtube.com/@dgxeon', // Command (URL in this case)
@@ -20759,9 +20762,9 @@ else if (typemenu === 'v13')
         'https://youtube.com/@dgxeon' // URL (used in image generation)
     ], 
     [
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/1024px-Telegram_2019_Logo.svg.png', // Image URL
-        '', // Title
-        `Created By ${ownername}`, // Body message
+      'https://static.vecteezy.com/system/resources/previews/021/704/868/non_2x/logo-for-the-letter-e-with-a-modern-classic-style-3d-alphabet-on-black-background-photo.JPG', // Image URL
+        'LIST MENU  📃\n', // Title
+        `List Of Different Files Stored In Database Of This BOT`, // Body message
         listmenu1, // Footer message
         'Visit', // Button display text
         'https://youtube.com/@dgxeon', // Command (URL in this case)
@@ -20769,9 +20772,9 @@ else if (typemenu === 'v13')
         'https://youtube.com/@dgxeon' // URL (used in image generation)
     ], 
     [
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/1024px-Telegram_2019_Logo.svg.png', // Image URL
-        '', // Title
-        `Created By ${ownername}`, // Body message
+      'https://img.freepik.com/premium-photo/letter-y-logo-design-v-monogram-logo-design_135595-41176.jpg?w=740', // Image URL
+        'RELIGION MENU  👻\n', // Title
+        `Use These Commands To Get Lines From Different Religious Books In Form Of Voice Note`, // Body message
         religionmenu1, // Footer message
         'Visit', // Button display text
         'https://youtube.com/@dgxeon', // Command (URL in this case)
@@ -20779,9 +20782,9 @@ else if (typemenu === 'v13')
         'https://youtube.com/@dgxeon' // URL (used in image generation)
     ], 
     [
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/1024px-Telegram_2019_Logo.svg.png', // Image URL
-        '', // Title
-        `Created By ${ownername}`, // Body message
+      'https://static.vecteezy.com/system/resources/previews/021/704/880/non_2x/logo-for-the-letter-c-with-a-modern-classic-style-3d-alphabet-on-black-background-photo.JPG', // Image URL
+        'ANIME MENU  👀\n', // Title
+        `Use This Commands To Search Different Anime Related Topics/Pictures`, // Body message
         animemenu1, // Footer message
         'Visit', // Button display text
         'https://youtube.com/@dgxeon', // Command (URL in this case)
@@ -20789,9 +20792,9 @@ else if (typemenu === 'v13')
         'https://youtube.com/@dgxeon' // URL (used in image generation)
     ],
     [
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/1024px-Telegram_2019_Logo.svg.png', // Image URL
-        '', // Title
-        `Created By ${ownername}`, // Body message
+      'https://static.vecteezy.com/system/resources/previews/021/704/997/non_2x/logo-for-the-letter-h-with-a-modern-classic-style-3d-alphabet-on-black-background-photo.JPG', // Image URL
+        'NSFW MENU  👅\n', // Title
+        `Use At Your Own Risk`, // Body message
         nsfwmenu1, // Footer message
         'Visit', // Button display text
         'https://youtube.com/@dgxeon', // Command (URL in this case)
@@ -20799,9 +20802,9 @@ else if (typemenu === 'v13')
         'https://youtube.com/@dgxeon' // URL (used in image generation)
     ], 
     [
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/1024px-Telegram_2019_Logo.svg.png', // Image URL
-        '', // Title
-        `Created By ${ownername}`, // Body message
+      'https://static.vecteezy.com/system/resources/previews/021/704/868/non_2x/logo-for-the-letter-e-with-a-modern-classic-style-3d-alphabet-on-black-background-photo.JPG', // Image URL
+        'RANDOM PHOTO MENU  📷\n', // Title
+        `Send Random Photos Of Girls From Different Platforms`, // Body message
         randomphotomenu1, // Footer message
         'Visit', // Button display text
         'https://youtube.com/@dgxeon', // Command (URL in this case)
@@ -20809,9 +20812,9 @@ else if (typemenu === 'v13')
         'https://youtube.com/@dgxeon' // URL (used in image generation)
     ], 
     [
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/1024px-Telegram_2019_Logo.svg.png', // Image URL
-        '', // Title
-        `Created By ${ownername}`, // Body message
+      'https://static.vecteezy.com/system/resources/previews/021/704/868/non_2x/logo-for-the-letter-e-with-a-modern-classic-style-3d-alphabet-on-black-background-photo.JPG', // Image URL
+        'RANDOM VIDEO MENU  📹\n', // Title
+        `Send Random Videos Of Girls From Different Platforms`, // Body message
         randomvideomenu1, // Footer message
         'Visit', // Button display text
         'https://youtube.com/@dgxeon', // Command (URL in this case)
@@ -20820,9 +20823,9 @@ else if (typemenu === 'v13')
     ], 
     
     [
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/1024px-Telegram_2019_Logo.svg.png', // Image URL
-        '', // Title
-        `Created By ${ownername}`, // Body message
+      'https://static.vecteezy.com/system/resources/previews/021/705/001/non_2x/logo-for-the-letter-m-with-a-modern-classic-style-3d-alphabet-on-black-background-photo.JPG', // Image URL
+        'STICKER MENU  👾\n', // Title
+        `Use To Get Various Stickers`, // Body message
         stickermenu1, // Footer message
         'Visit', // Button display text
         'https://youtube.com/@dgxeon', // Command (URL in this case)
@@ -20830,9 +20833,9 @@ else if (typemenu === 'v13')
         'https://youtube.com/@dgxeon' // URL (used in image generation)
     ], 
     [
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/1024px-Telegram_2019_Logo.svg.png', // Image URL
-        '', // Title
-        `Created By ${ownername}`, // Body message
+      'https://static.vecteezy.com/system/resources/previews/021/705/108/non_2x/logo-for-the-letter-s-with-a-modern-classic-style-3d-alphabet-on-black-background-photo.JPG', // Image URL
+        'DATABASE MENU  📃\n', // Title
+        `Database Menu`, // Body message
         databasemenu1, // Footer message
         'Visit', // Button display text
         'https://youtube.com/@dgxeon', // Command (URL in this case)
@@ -20840,9 +20843,9 @@ else if (typemenu === 'v13')
         'https://youtube.com/@dgxeon' // URL (used in image generation)
     ], 
     [
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/1024px-Telegram_2019_Logo.svg.png', // Image URL
-        '', // Title
-        `Created By ${ownername}`, // Body message
+      'https://static.vecteezy.com/system/resources/previews/021/705/014/non_2x/logo-for-the-letter-b-with-a-modern-classic-style-3d-alphabet-on-black-background-photo.JPG', // Image URL
+        'STORE MENU  🛒\n', // Title
+        `Store Related Commands`, // Body message
         storemenu1, // Footer message
         'Visit', // Button display text
         'https://youtube.com/@dgxeon', // Command (URL in this case)
@@ -20850,9 +20853,9 @@ else if (typemenu === 'v13')
         'https://youtube.com/@dgxeon' // URL (used in image generation)
     ], 
     [
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/1024px-Telegram_2019_Logo.svg.png', // Image URL
-        '', // Title
-        `Created By ${ownername}`, // Body message
+      'https://static.vecteezy.com/system/resources/previews/021/704/879/non_2x/logo-for-the-letter-o-with-a-modern-classic-style-3d-alphabet-on-black-background-photo.JPG', // Image URL
+        'STALKER MENU  😈\n', // Title
+        `Use To Stalk Any Social Media Profile Present ON These Platforms`, // Body message
         stalkermenu1, // Footer message
         'Visit', // Button display text
         'https://youtube.com/@dgxeon', // Command (URL in this case)
@@ -20860,25 +20863,16 @@ else if (typemenu === 'v13')
         'https://youtube.com/@dgxeon' // URL (used in image generation)
     ], 
     [
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/1024px-Telegram_2019_Logo.svg.png', // Image URL
-        '', // Title
-        `Created By ${ownername}`, // Body message
+      'https://static.vecteezy.com/system/resources/previews/021/704/722/non_2x/logo-for-the-letter-t-with-a-modern-classic-style-3d-alphabet-on-black-background-photo.JPG', // Image URL
+        'BUG MENU  🪲\n', // Title
+        `Dangerous 💀☠️`, // Body message
         bugmenu1, // Footer message
         'Visit', // Button display text
         'https://youtube.com/@dgxeon', // Command (URL in this case)
         'cta_url', // Button type
         'https://youtube.com/@dgxeon' // URL (used in image generation)
     ], 
-    [
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/1024px-Telegram_2019_Logo.svg.png', // Image URL
-        '', // Title
-        `Created By ${ownername}`, // Body message
-        othermenu, // Footer message
-        'Visit', // Button display text
-        'https://youtube.com/@dgxeon', // Command (URL in this case)
-        'cta_url', // Button type
-        'https://youtube.com/@dgxeon' // URL (used in image generation)
-    ], 
+
 ];
 
 let user=m.sender
