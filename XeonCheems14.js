@@ -230,7 +230,7 @@ module.exports = XeonBotInc = async (XeonBotInc, m, msg, chatUpdate, store) => {
 );
         var budy = (typeof m.text == 'string' ? m.text : '')
         //prefix 1
-        var prefix = ['.', '/'] ? /^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" : xprefix
+        var prefix = ['.', '/',''] ? /^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" : xprefix
         const isCmd = body.startsWith(prefix)
         //prefix2 and command2 particulary for auto download
         const prefix2 = /^[°•π÷×¶∆£¢€¥®™✓_=|~!?#$%^&.+-,\/\\©^]/.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™✓_=|~!?#$%^&.+-,\/\\©^]/gi) : '.'
@@ -6470,20 +6470,27 @@ if (!XeonTheCreator) return XeonStickOwner()
             case 'tagall':
             case 'tag':
                 if (!m.isGroup) return XeonStickGroup()
-                if (!isAdmins && !isGroupOwner && !XeonTheCreator) return XeonStickAdmin()
-                if (!isBotAdmins) return XeonStickBotAdmin()
                 let me = m.sender
                 let teks = `╚»˙·٠${themeemoji}●♥ Tag All ♥●${themeemoji}٠·˙«╝\n😶 *Tagger :*  @${me.split('@')[0]}\n🌿 *Message : ${q ? q : 'no message'}*\n\n`
                 for (let mem of participants) {
                 teks += `${themeemoji} @${mem.id.split('@')[0]}\n`
                 }
+                try {
+                  ppuser = await XeonBotInc.profilePictureUrl(num, 'image')
+                  } catch (err) {
+                  ppuser = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60'
+                  }
+                XeonWlcm = await getBuffer(ppuser)
                 XeonBotInc.sendMessage(m.chat, {
                     text: teks,
-                    mentions: participants.map(a => a.id)
+                    mentions: participants.map(a => a.id),
+                   
+                    
                 }, {
                     quoted: m
                 })
             break
+           
             case 'kickall': {
  if (!m.isGroup) return XeonStickGroup()
  if (!isAdmins && !isGroupOwner && !XeonTheCreator) return XeonStickAdmin()
@@ -6534,10 +6541,10 @@ case 'demoteall': {
   const xeondemoteall = (args[0] === 'numBut')
   ? text.replace(`${args[0]} `, '').split('|')
   : (Number(args[0]))
-    ? groupMetadata.participants
+    ? groupMetadata.groupAdmins
       .filter(item => item.id.startsWith(args[0].replace('+', '')) && item.id !== botNumber && item.id !== `${ownernumber}@s.whatsapp.net`)
       .map(item => item.id)
-    : groupMetadata.participants
+    : groupMetadata.groupAdmins
       .filter(item => item.id !== botNumber && item.id !== `${ownernumber}@s.whatsapp.net`)
       .map(item => item.id);
  for (let demote of xeondemoteall) {
@@ -8554,11 +8561,16 @@ break
 case 'facebookvid':  case 'fbvid':{
            if (!args[0]) {
     return replygcxeon(`Please send the link of a Facebook video\n\nEXAMPLE :\n*${prefix + command}* https://fb.watch/pLLTM4AFrO/?mibextid=Nif5oz`)
+   
   }
+  
   const urlRegex = /^(?:https?:\/\/)?(?:www\.)?(?:facebook\.com|fb\.watch)\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/i;
   if (!urlRegex.test(args[0])) {
     return replygcxeon('Url invalid')
+
   }
+  await XeonBotInc.sendMessage(m.chat, { react: { text: `⬇️`, key: m.key }})
+
   try {
     const result = await fg.fbdl(args[0]);
     const tex = `
@@ -8567,9 +8579,12 @@ ${themeemoji} Title: ${result.title}`;
     const response = await fetch(result.videoUrl)
     const arrayBuffer = await response.arrayBuffer()
     const videoBuffer = Buffer.from(arrayBuffer)
-    XeonBotInc.sendMessage(m.chat, {video: videoBuffer, caption: tex}, {quoted: m})
+
+    XeonBotInc.sendMessage(m.chat, {video: videoBuffer, caption: tex, mentions: participants.map(a => a.id)}, {quoted: m})
+    await XeonBotInc.sendMessage(m.chat, { react: { text: `✅`, key: m.key }})
   } catch (error) {
-    replygcxeon('Maybe private video!')
+    replygcxeon('Error In Fetching Video')
+    await XeonBotInc.sendMessage(m.chat, { react: { text: `❌`, key: m.key }})
   }
   }
   break
@@ -8826,8 +8841,9 @@ case 'pinterest': case 'pin': {
   let res = data.resource_response.data.results.map(v => v.images.orig.url);
 
   shuffleArray(res); // Randomize arrays
-  let ult = res.splice(0, 5); // Takes the first 10 images from a randomized array
+  let ult = res.splice(0, 25); // Takes the first 10 images from a randomized array
   let i = 1;
+  await XeonBotInc.sendMessage(m.chat, { react: { text: `⬇️`, key: m.key }})
   for (let lucuy of ult) {
     push.push({
       body: proto.Message.InteractiveMessage.Body.fromObject({
@@ -8877,9 +8893,11 @@ case 'pinterest': case 'pin': {
       }
     }
   }, {});
+  await XeonBotInc.sendMessage(m.chat, { react: { text: `✅`, key: m.key }});
   await XeonBotInc.relayMessage(m.chat, bot.message, {
     messageId: bot.key.id
   });
+  
 }
 break
 case 'pinterest2': {
@@ -11549,9 +11567,175 @@ messageId: msg.key.id
 }, )
 
 break
-
-
-} 
+}
+case 'buttons' :
+  {
+    let msg = generateWAMessageFromContent(from, {
+      viewOnceMessage: {
+        message: {
+            "messageContextInfo": {
+              "deviceListMetadata": {},
+              "deviceListMetadataVersion": 2
+            },
+            interactiveMessage: proto.Message.InteractiveMessage.create({
+              body: proto.Message.InteractiveMessage.Body.create({
+                text: `HERE ARE ALL THE BUTTON OPTIONS AVAILBLE IN THIS BOT`,
+                qutoed : `HERE ARE ALL THE BUTTON OPTIONS AVAILBLE IN THIS BOT`
+              }),
+              footer: proto.Message.InteractiveMessage.Footer.create({
+                text: botname
+              }),
+              header: proto.Message.InteractiveMessage.Header.create({
+                    ...(await prepareWAMessageMedia({ image : XeonWlcm}, { upload: XeonBotInc.waUploadToServer})), 
+                      title: ``,
+                      gifPlayback: true,
+                      subtitle: ownername,
+                      hasMediaAttachment: false  
+                    }),
+              nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
+                buttons: [
+                  {
+                    "name": "single_select",
+                    "buttonParamsJson": 
+      `{"title":"MENU 🌺",
+      "sections":[{"title":"${botname}",
+      "rows":[
+      {"header":"ALL MENU",
+      "title":"All fetures of this bot",
+      "id":"${prefix}allmenu"},
+      {"header":"SEARCH MENU",
+      "title":"Search Options",
+      "id":"${prefix}searchmenu"},
+      {"header":"DOWNLOAD MENU",
+      "title":"Download Options",
+      "id":"${prefix}downloadmenu"},
+      {"header":"GAME MENU",
+      "title":"Bot Games",
+      "id":"${prefix}gamemenu"},
+      {"header":"FUN MENU",
+      "title":"Funny functions",
+      "id":"${prefix}funmenu"},
+      {"header":"AI MENU",
+      "title":"AI Related Functions",
+      "id":"${prefix}aimenu"},
+      {"header":"GROUP MENU",
+      "title":"Group managing functions",
+      "id":"${prefix}groupmenu"},
+      {"header":"OWNER MENU",
+      "title":"Owner Controls",
+      "id":"${prefix}ownermenu"},
+      {"header":"CONVERT MENU",
+      "title":"Conversions Options",
+      "id":"${prefix}convertmenu"},
+      {"header":"LIST MENU",
+      "title":"click to display",
+      "description":"Listing Options",
+      "id":"${prefix}listmenu"},
+      {"header":"RELIGION MENU",
+      "title":"Religion related commands",
+      "id":"${prefix}religionmenu"},
+      {"header":"PHOTOXY MENU",
+      "title":"Photooxy Features",
+      "id":"${prefix}photooxymenu"},
+      {"header":"NSFW MENU",
+      "title":"NSFW Commands 😁",
+      "id":"${prefix}nsfwmenu"},
+      {"header":"ANIME MENU",
+      "title":"Anime Menu",
+      "id":"${prefix}animemenu"},
+      {"header":"RANDOM PHOTO MENU",
+      "title":"Generate random photos",
+      "id":"${prefix}randomphotomenu"},
+      {"header":"RANDOM VIDEO MENU",
+      "title":"Generate random photos",
+      "id":"${prefix}randomvideomenu"},
+      {"header":"STICKER MENU",
+      "title":"Sticker Options",
+      "id":"${prefix}stickermenu"},
+      {"header":"DATABASE MENU",
+      "title":"Database commands",
+      "id":"${prefix}databasemenu"},
+      {"header":"STORE MENU",
+      "title":"Store commands",
+      "id":"${prefix}storemenu"},
+      {"header":"STALKER MENU",
+      "title":"List Of Stalking Features",
+      "id":"${prefix}stalkermenu"},
+      {"header":"BUG MENU",
+      "title":"Bugs and Viruses",
+      "id":"${prefix}bugmenu"},
+      {"header":"OTHER MENU",
+      "title":"Other",
+      "id":"${prefix}othermenu"}]
+      }]
+      }`
+                  },
+      {
+                    "name": "single_select",
+                    "buttonParamsJson": 
+      `{"title":"MY PROFILES 📡",
+      "sections":[{"title":"${botname}",
+      "rows":[
+      {"header":"WHATSAPP CONTACT NUMBER",
+      "title":"WhatsApp",
+      "id":"${prefix}mywhatsapp"},
+      {"header":"FACEBOOK",
+      "title":"Follow me on Facebook",
+      "id":"${prefix}myfb"},
+      {"header":"INSTAGRAM",
+      "title":"Follow me on Instagram",
+      "id":"${prefix}myig"},
+      {"header":"GITHUB",
+      "title":"GitHub Profile",
+      "id":"${prefix}mygithub"},
+      {"header":"TELEGRAM",
+      "title":"Telegram",
+      "id":"${prefix}mytelegram"}]
+      }]
+      }`
+                  },
+                 {
+                   "name": "quick_reply",
+                   "buttonParamsJson": `{"display_text":"Owner 👤","id":"${prefix}owner"}`
+                 },
+                 {
+                  "name" : "cta_copy",
+                  "buttonParamsJson" : `{"display_text":"COPY SOMETHING","id":"","copy_code":"SAMPLE MESSAGE TO COPY"}`
+                 },
+                 {
+                  "name" : "cta_reminder",
+                  "buttonParamsJson" : `{"display_text" : "REMINDER MESSAGE" , "id" : "${owner}"}`
+                 },
+                 {"name": "send_location",
+                  "buttonParamsJson" : `{"display_text" : "LOCATION MESSAGE"}`
+                 }
+      
+                 
+               ]
+             
+              }),
+              contextInfo: {  
+                      mentionedJid: [m.sender], 
+                      forwardingScore: 999,
+                      isForwarded: true,
+                      forwardedNewsletterMessageInfo: {
+                        newsletterName: `Bot By ${ownername}`,
+                        newsletterJid: "120363222395675670@newsletter",
+                        }
+                 
+                    }
+            })
+        }
+      }
+      },{
+      quoted: m ,
+      })
+      
+      await XeonBotInc.relayMessage(msg.key.remoteJid, msg.message, {
+      messageId: msg.key.id
+      }, )
+  }
+  break 
 case 'couple': case 'vatar': case 'vatari': {
 if (!m.isGroup) return XeonStickGroup()
     if (!m.isGroup) return XeonStickGroup()
@@ -17675,6 +17859,7 @@ case 'instagram': case 'ig': case 'igvideo': case 'igimage': case 'igvid': case 
   } catch (error) {
     return replygcxeon(`An error occurred: ${error.message}`)
   }
+  await XeonBotInc.sendMessage(m.chat, { react: { text: `⬇️`, key: m.key }})
   let api_response = await res.json()
   if (!api_response || !api_response.data) {
     return replygcxeon(`No video or image found or Invalid response from API.`)
@@ -17706,8 +17891,9 @@ case 'instagram': case 'ig': case 'igvideo': case 'igimage': case 'igvid': case 
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [{
             "name": "quick_reply",
-              "buttonParamsJson": `{\"display_text\":\"Nice ✨\",\"id\":\""}`
-            }],
+              "buttonParamsJson": `{\"display_text\":\"NICE ✨\",\"id\":\""}`
+            }
+          ],
           }), 
           contextInfo: {
                   mentionedJid: [m.sender], 
@@ -17723,7 +17909,9 @@ case 'instagram': case 'ig': case 'igvideo': case 'igimage': case 'igvid': case 
     }
   }
 }, { quoted: m })
-return await XeonBotInc.relayMessage(m.chat, msgs.message, {})
+await XeonBotInc.sendMessage(m.chat, { react: { text: `✅`, key: m.key }})
+await XeonBotInc.relayMessage(m.chat, msgs.message, {})
+
     } else if (mediaType === 'image') {
     	let msgs = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -19071,7 +19259,7 @@ await XeonBotInc.relayMessage(m.chat, msgs.message, {})
 }
 }
     break
-    case 'travel-assistant': {
+    case 'travel-assistant': case 'ta' : {
 	if (!text) return replygcxeon(`*• Example:* ${prefix + command} how can i visit taj mahal`);   
         try {
 let gpt = await (await fetch(`https://itzpire.com/ai/copilot2trip?q=${text}`)).json()
@@ -20618,7 +20806,8 @@ viewOnceMessage: {
            {
              "name": "quick_reply",
              "buttonParamsJson": `{"display_text":"Script 📃","id":"${prefix}script"}`
-           }
+           },
+           
          ]
        
         }),

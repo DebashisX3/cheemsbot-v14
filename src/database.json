@@ -139,6 +139,61 @@
       "premium": false,
       "limit": 100,
       "totalLimit": 0
+    },
+    "919062628928@s.whatsapp.net": {
+      "serialNumber": "763ab502245bbf75a6df054db8db17a8",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "Samriddho",
+      "premium": false,
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "15202868300@s.whatsapp.net": {
+      "serialNumber": "b7804139d06ef43b4c468ed6387ca5ac",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "Samrat XD BOT                                                  By Samriddho",
+      "premium": false,
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "916294627538@s.whatsapp.net": {
+      "serialNumber": "46e789774ac1328202306670ec54fac1",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "Raj",
+      "premium": "false",
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "918145475191@s.whatsapp.net": {
+      "serialNumber": "e95df2138250cccfcad4381e7af7ec89",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "Gopu (Marketing Agent)",
+      "premium": "false",
+      "limit": 100,
+      "totalLimit": 0
+    },
+    "918145581938@s.whatsapp.net": {
+      "serialNumber": "a12870bdccc4a915852ef17bd1ab6311",
+      "title": "User",
+      "afkTime": -1,
+      "badword": 0,
+      "afkReason": "",
+      "nick": "ᴠͥɪͣᴘͫ✮⃝͜͡亗MRꨄ︎DIFFERENT亗",
+      "premium": false,
+      "limit": 100,
+      "totalLimit": 0
     }
   },
   "chats": {
@@ -381,6 +436,66 @@
       "antilink": false,
       "antipromotion": false,
       "antilinkgc": false
+    },
+    "120363236965220457@g.us": {
+      "badword": false,
+      "antiforeignnum": false,
+      "antibot": false,
+      "antiviewonce": true,
+      "antispam": false,
+      "antivirtex": false,
+      "antimedia": false,
+      "antiimage": false,
+      "antivideo": false,
+      "antiaudio": false,
+      "antipoll": false,
+      "antisticker": false,
+      "antilocation": false,
+      "antidocument": false,
+      "anticontact": false,
+      "antilink": false,
+      "antipromotion": false,
+      "antilinkgc": false
+    },
+    "120363294037045177@g.us": {
+      "badword": false,
+      "antiforeignnum": false,
+      "antibot": false,
+      "antiviewonce": true,
+      "antispam": false,
+      "antivirtex": false,
+      "antimedia": false,
+      "antiimage": false,
+      "antivideo": false,
+      "antiaudio": false,
+      "antipoll": false,
+      "antisticker": false,
+      "antilocation": false,
+      "antidocument": false,
+      "anticontact": false,
+      "antilink": false,
+      "antipromotion": false,
+      "antilinkgc": false
+    },
+    "120363048199591741@g.us": {
+      "badword": false,
+      "antiforeignnum": false,
+      "antibot": false,
+      "antiviewonce": true,
+      "antispam": false,
+      "antivirtex": false,
+      "antimedia": false,
+      "antiimage": false,
+      "antivideo": false,
+      "antiaudio": false,
+      "antipoll": false,
+      "antisticker": false,
+      "antilocation": false,
+      "antidocument": false,
+      "anticontact": false,
+      "antilink": false,
+      "antipromotion": false,
+      "antilinkgc": false
     }
   },
   "settings": {
@@ -509,7 +624,7 @@
       }
     },
     "15202238877@s.whatsapp.net": {
-      "totalhit": 50,
+      "totalhit": 148,
       "totalError": 0,
       "online": false,
       "autosticker": false,
